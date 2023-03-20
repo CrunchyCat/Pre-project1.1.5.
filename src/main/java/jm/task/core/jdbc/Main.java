@@ -6,8 +6,10 @@ import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
 
 
+
 public class Main {
     public static void main(String[] args) {
+
         UserService userService = new UserServiceImpl();
 
         userService.createUsersTable();                                        // Создание таблицы
@@ -23,7 +25,7 @@ public class Main {
 
         userService.dropUsersTable();                                           // Удаление таблицы
 
-        UserDaoHibernateImpl.getSessionFactory().close();                       // Закрытие глобальной сессии
+        UserDaoHibernateImpl.closeSessionFactory();                    // Закрытие глобальной сессии
 
 
     }
